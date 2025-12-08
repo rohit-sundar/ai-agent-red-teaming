@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# Other files
+.python-version
+pyproject.toml
+uv.lock

@@ -8,6 +8,7 @@ class Calculator:
             "*": lambda a, b: a * b,
             "/": lambda a, b: a / b,
         }
+        # Corrected precedence: multiplication and division have higher precedence
         self.precedence = {
             "+": 1,
             "-": 1,
@@ -27,6 +28,8 @@ class Calculator:
 
         for token in tokens:
             if token in self.operators:
+                # While operator stack is not empty, and the top operator has
+                # greater or equal precedence than the current token, apply operator
                 while (
                     operators
                     and operators[-1] in self.operators
@@ -40,6 +43,7 @@ class Calculator:
                 except ValueError:
                     raise ValueError(f"invalid token: {token}")
 
+        # Apply remaining operators
         while operators:
             self._apply_operator(operators, values)
 

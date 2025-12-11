@@ -66,7 +66,7 @@ def main():
 
     for i in range(MAX_ITERS):
         response = client.models.generate_content(
-            model='gemini-2.5-flash-lite',
+            model='gemini-2.5-flash',
             contents=messages,
             config=config
         )

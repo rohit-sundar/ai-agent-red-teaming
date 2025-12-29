@@ -10,8 +10,8 @@ from agentfence.probes import (
     RoleConfusionProbe
 )
 from agentfence.run_probes import run_security_probes
-from gemini_wrapper import CodingAgent
-from gemini_evaluator import GeminiEvaluator
+from agentfence_gemini.gemini_wrapper import CodingAgent
+from agentfence_gemini.gemini_evaluator import GeminiEvaluator
 
 
 def main():

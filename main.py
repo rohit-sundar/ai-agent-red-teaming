@@ -111,4 +111,5 @@ def main():
 
     response = agent.query(user_prompt=prompt, verbose=verbose_flag)
 
-main()
+if __name__ == "__main__":
+    main()

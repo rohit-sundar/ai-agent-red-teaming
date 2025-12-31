@@ -1,3 +1,11 @@
+"""
+functions.get_file_content
+--------------------------
+Utility to read a file (bounded by `MAX_CHARS`) from a provided
+working directory. Ensures reads are constrained to the working
+directory for safety and returns errors as strings on failure.
+"""
+
 import os
 
 from config import MAX_CHARS

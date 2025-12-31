@@ -1,3 +1,11 @@
+"""
+functions.write_file
+--------------------
+Safely write or overwrite a file inside the working directory. Creates
+parent directories when necessary and returns a concise success or
+error message as a string.
+"""
+
 import os
 from google.genai import types
 

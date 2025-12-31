@@ -1,3 +1,12 @@
+"""
+agentfence_gemini.gemini_wrapper
+--------------------------------
+Lightweight AgentFence wrapper for a Gemini-powered coding agent.
+Provides `CodingAgent` which drives the model, exposes a small set
+of file and execution tools, and runs the function-call loop used by
+the AgentFence tests.
+"""
+
 import os
 from config import MAX_ITERS
 from google import genai

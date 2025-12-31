@@ -1,7 +1,15 @@
+"""
+function_tests
+--------------
+Ad-hoc tests for the utilities in `functions/`. Each test prints
+results and error conditions to help manually verify behavior.
+"""
+
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
 from functions.write_file import write_file
 from functions.run_python_file import run_python_file
+
 
 def test_get_files_info():
     working_dir = "calculator"

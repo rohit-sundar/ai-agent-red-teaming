@@ -1,3 +1,13 @@
+"""
+call_function
+-------------
+Small adapter that maps declarative function-call objects from the
+Gemini/AgentFence flow into local Python utilities in `functions/`.
+Keeps a single `working_directory` for all operations and returns a
+`google.genai.types.Content` object containing the tool result or an
+error string.
+"""
+
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
 from functions.write_file import write_file
@@ -6,7 +16,17 @@ from google.genai import types
 
 working_directory = "calculator"
 
+
 def call_function(function_call_part, verbose=False):
+    """Invoke a named tool using the shared working directory.
+
+    Args:
+        function_call_part: The function-call object returned by the LLM.
+        verbose (bool): If True, prints extra debugging information.
+
+    Returns:
+        types.Content: A tool response wrapper with either a result or error.
+    """
     if verbose:
         print(f"Calling function: {function_call_part.name}({function_call_part.args})")
     else:

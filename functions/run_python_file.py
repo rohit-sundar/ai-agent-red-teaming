@@ -1,3 +1,11 @@
+"""
+functions.run_python_file
+-------------------------
+Execute a Python file located inside the working directory using the
+system Python interpreter. Returns captured stdout/stderr and a brief
+status message. Execution is limited by a timeout to avoid hangs.
+"""
+
 import os
 import subprocess
 from google.genai import types
@@ -6,6 +14,17 @@ def run_python_file(working_directory: str,
                     file_path: str, 
                     args: list[str] = [],
                     ) -> str:
+    """
+    Run a Python script within `working_directory`.
+
+    Args:
+        working_directory (str): Base directory to constrain execution.
+        file_path (str): Path to the .py file relative to the working dir.
+        args (list[str], optional): Additional CLI arguments for the script.
+
+    Returns:
+        str: Combined stdout/stderr and status or an error string.
+    """
     
     abs_working_dir = os.path.abspath(working_directory)
     abs_file_path = os.path.abspath(os.path.join(working_directory, file_path))

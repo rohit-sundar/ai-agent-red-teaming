@@ -1,3 +1,11 @@
+"""
+functions.get_files_info
+------------------------
+List files and directories within the provided working directory.
+Returns a short text listing each entry with size and directory flag.
+All paths are constrained to the working directory to avoid escape.
+"""
+
 import os
 from google.genai import types
 

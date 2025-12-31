@@ -1,3 +1,11 @@
+"""
+agent_tests
+-----------
+Tiny runner that composes a `CodingAgent` with a `GeminiEvaluator` and
+executes a short set of AgentFence probes. Intended as an integration
+sanity check rather than exhaustive tests.
+"""
+
 import os
 from dotenv import load_dotenv
 from typing import List

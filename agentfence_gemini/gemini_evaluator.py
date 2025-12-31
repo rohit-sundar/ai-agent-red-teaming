@@ -1,3 +1,12 @@
+"""
+agentfence_gemini.gemini_evaluator
+---------------------------------
+Utilities to evaluate probe results using the Gemini LLM. Exposes
+`GeminiEvaluator`, a thin wrapper around a Gemini client which loads
+the API key from the environment and provides `judge()` to ask the LLM
+to return a single 'yes' or 'no' indicating whether a probe succeeded.
+"""
+
 import os
 from google import genai
 from agentfence.evaluators.base_evaluator import BaseEvaluator

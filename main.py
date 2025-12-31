@@ -1,3 +1,11 @@
+"""
+main
+----
+Simple CLI wrapper exposing a `CodingAgent` backed by Gemini. The
+agent accepts a single prompt and uses the function-call tools in
+`functions/` to inspect and manipulate the workspace during generation.
+"""
+
 import os
 import sys
 from dotenv import load_dotenv
